@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tebak Lirik - Ed Sheeran</title>
+</head>
+
+<body class="ed-sheeran">
+    <div id="wrapper">
+        <div class="quiz">
+            <div class="quiz__wrapper">
+                <div class="quiz__wrapper-start"></div>
+                <div class="quiz__wrapper-menu">
+                    <div class="quiz__top">
+                        <div class="quiz__menu">
+                            <span class="menu__action menu__action--back" onclick="handleOpenDialog()"></span>
+                            <div class="countdown quiz__time">
+                                <span class="countdown__num">0</span>
+                                <svg class="countdown__progress">
+                                    <defs>
+                                        <linearGradient id="cdgradient" x1="100%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#b21c26" />
+                                            <stop offset="100%" style="stop-color:#ffffff" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle class="countdown__progress-gradient" fill="url(#cdgradient)" />
+                                    <circle class="countdown__progress-bar" />
+                                </svg>
+                            </div>
+                            <div class="quiz__menu-score">
+                                <span>1.000</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="quiz__wrapper-content">
+                    <div class="quiz__container">
+                        <div class="quiz__question">
+                            <div class="question__title"><span>Shape of You</span></div>
+                            <div class="question__body">
+                                <div class="question__wrapper">
+                                    <span class="question__word">I'm</span>
+                                    <span class="question__word">in</span>
+                                    <span class="question__word">love</span>
+                                    <span class="question__word">with</span>
+                                    <span class="question__word">the</span>
+                                    <span class="question__blank question__blank--selected">
+                                        <span>asaasas</span>
+                                    </span>
+                                    <span class="question__word">of</span>
+                                    <span class="question__word">you,</span>
+                                    <span class="question__word">we</span>
+                                    <span class="question__word">push</span>
+                                    <span class="question__word">and</span>
+                                    <span class="question__word">pull</span>
+                                    <span class="question__word">like</span>
+                                    <span class="question__word">a</span>
+                                    <span class="question__blank"></span>
+                                    <span class="question__word">do</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="quiz__answer">
+                            <a href="#!" class="answer__btn">
+                                <div class="answer__btn-inner">
+                                    Magnet
+                                </div>
+                            </a>
+                            <a href="#!" class="answer__btn">
+                                <div class="answer__btn-inner">
+                                    Responsible
+                                </div>
+                            </a>
+                            <a href="#!" class="answer__btn">
+                                <div class="answer__btn-inner">
+                                    Love
+                                </div>
+                            </a>
+                            <a href="#!" class="answer__btn answer__btn--selected">
+                                <div class="answer__btn-inner">
+                                    Perfect
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="quiz__footer">
+                        <div class="quiz__counter">1 dari 3 pertanyaan</div>
+                        <div class="quiz__action">
+                            <div class="quiz__btn quiz__btn-refresh"></div>
+                            <div class="quiz__btn quiz__btn-submit"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+        <div class="dialog dialog--custom dialog--back" id="js_dialog-back">
+            <div class="dialog__container">
+                <div class="dialog__close" onclick="handleCloseDialog()"></div>
+                <div class="dialog__icon">
+                    <div class="dialog__icon-img"></div>
+                </div>
+                <div class="dialog__content">
+                    <div class="dialog__inner">
+                        <h3 class="dialog__title">Kembali ke Home Tebak Lirik Ed Sheeran?</h3>
+                        <p class="dialog__desc">Skor dan token yang terpakai akan hangus apabila keluar dari permainan.</p>
+                        <div class="dialog__action">
+                            <button class="btn btn--primary btn--animate">
+                                Ya, Keluar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+
+</html>

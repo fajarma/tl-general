@@ -1,0 +1,148 @@
+.landing-page {
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/main-bg.jpg);
+    @include backgroundImg;
+    background-position: top;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 45vh;
+        width: 100%;
+        background-image: linear-gradient($black0, $black4);
+    }
+    &__top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 16px;
+        height: 30px;
+        color: $whitePrimary;
+        font-size: 10px;
+        background: $blue;
+        box-shadow: 0px 2px 6px $black36;
+        &--show {
+            .landing-page__info {
+                &-text {
+                    opacity: 1;
+                    transform: translateY(0px);
+                }
+            }
+        }
+        &-text {
+            opacity: 0;
+            transform: translateY(-25px);
+            transition: all .15s ease-out;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            display: flex;
+            flex-direction: row;
+            height: 11px;
+            line-height: 11px;
+            div {
+                padding-right: 3px;
+                &:first-child {
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+            }
+        }
+        &-num {
+            display: flex;
+            align-items: center;
+            margin-left: 20px;
+            justify-content: flex-end;
+            width: 52px;
+            height: 11px;
+            line-height: 11px;
+            &::before {
+                content: '';
+                display: block;
+                width: 8px;
+                height: 11px;
+                margin-right: 4px;
+                @include backgroundImg;
+                background-image: url(https://cdn.tokopedia.net/play-groupchat/assets/img/participant.png);
+            }
+        }
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 16px 0;
+        &-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .menu {
+                &__action {
+                    margin-left: 16px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__container {
+        height: 100vh;
+        padding: 32px 0 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    &__header {
+        font-family: $markerFont;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+    }
+    &__cover {
+        position: relative;
+        img {
+            height: 52vh;
+            margin-bottom: -71px;
+        }
+    }
+    &__title {
+        position: relative;
+        background-image: url(../img/title-bg.png);
+        @include backgroundImg;
+        background-size: 100% 100%;
+        width: 100%;
+        height: 131px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .title {
+            &__top {
+                font-size: 28px;
+                line-height: 1.32;
+            }
+            &__bottom {
+                font-size: 40px;
+                text-transform: uppercase;
+            }
+        }
+    }
+    &__action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+    }
+}

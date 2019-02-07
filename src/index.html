@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tebak Lirik - Ed Sheeran</title>
+</head>
+
+<body class="ed-sheeran">
+  <div id="wrapper">
+    <div class="landing-page">
+      <div class="landing-page__top">
+        <div class="landing-page__info landing-page__info--show">
+          <div class="landing-page__info-text">Ash Ketchum mendapat skor 1.250</div>
+          <span class="landing-page__info-num">5.232</span>
+        </div>
+        <div class="landing-page__menu menu">
+          <a href="https://www.tokopedia.com/" class="menu__action menu__action--back"></a>
+          <div class="landing-page__menu-right">
+            <a class="menu menu__action menu__action--sound-off" onclick="handleActiveSound(true)"></a>
+            <a class="menu menu__action menu__action--leaderboard" onclick="renderLeaderboard('home')"></a>
+            <a class="menu menu__action menu__action--share" onclick="renderBottomShare(true)"></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="landing-page__container">
+        <div class="landing-page__header">
+          <div class="landing-page__cover">
+            <img src="./assets/img/ed.png">
+          </div>
+          <div class="landing-page__title">
+            <div class="title__top">Tebak Lirik</div>
+            <div class="title__bottom">Ed Sheeran</div>
+          </div>
+        </div>
+        <div class="landing-page__action">
+          <div class="landing-page__desc"></div>
+          <button class="btn btn-img btn-img--primary btn--play" id="js_main-btn">
+            <span>Mulai Main</span>
+          </button>
+          <div class="btn-group">
+            <button class="btn btn--token" onclick="handleOpenDialog('#js_dialog-token')">
+              <span>Token: 1</span>
+            </button>
+            <button class="btn btn--prize" onclick="handleOpenDialog('#js_dialog-prize')">
+              <span>Info Hadiah</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="overlay"></div>
+    <div class="dialog dialog--home" id="js_dialog-prize">
+      <div class="dialog__container">
+        <div onclick="handleCloseDialog()" class="dialog__close"></div>
+        <div class="dialog__icon">
+          <div class="dialog__icon-img"></div>
+        </div>
+        <div class="dialog__content">
+          <div class="dialog__inner">
+            <p class="dialog__desc">Dapatkan kesempatan memenangkan kupon cashback sampai 60%</p>
+            <div class="coupon">
+              <div class="coupon__list">
+                <img src="https://cdn.tokopedia.net/play-groupchat/assets/img/coupon.png" alt="coupon">
+              </div>
+              <div class="coupon__list">
+                <img src="https://cdn.tokopedia.net/play-groupchat/assets/img/coupon.png" alt="coupon">
+              </div>
+              <div class="coupon__list">
+                <img src="https://cdn.tokopedia.net/play-groupchat/assets/img/coupon.png" alt="coupon">
+              </div>
+              <div class="coupon__list">
+                <img src="https://cdn.tokopedia.net/play-groupchat/assets/img/coupon.png" alt="coupon">
+              </div>
+              <div class="coupon__list">
+                <img src="https://cdn.tokopedia.net/play-groupchat/assets/img/coupon.png" alt="coupon">
+              </div>
+              <div class="coupon__list">
+                <img src="https://cdn.tokopedia.net/play-groupchat/assets/img/coupon.png" alt="coupon">
+              </div>
+            </div>
+            <a href="" class="btn btn--link">syarat dan ketentuan</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog dialog--custom dialog--token" id="js_dialog-token">
+      <div class="dialog__container">
+        <div class="dialog__close" onclick="handleCloseDialog()"></div>
+        <div class="dialog__icon">
+          <div class="dialog__icon-img"></div>
+        </div>
+        <div class="dialog__content">
+          <div class="dialog__inner">
+            <h3 class="dialog__title">Mau Token Ekstra?</h3>
+            <p class="dialog__desc">Lihat iklan atau share game dan dapatkan 1 token ekstra untuk bermain.</p>
+            <p class="dialog__info">(Maksimum 2 token ekstra / hari)</p>
+            <div class="dialog__action">
+              <button class="btn btn--primary btn--animate">
+                Lihat Iklan
+              </button>
+              <button class="btn btn--text btn--animate">
+                Share
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog dialog--custom dialog--sound" id="js_dialog-sound">
+      <div class="dialog__container">
+        <div class="dialog__close" onclick="handleCloseDialog()"></div>
+        <div class="dialog__icon">
+          <div class="dialog__icon-img"></div>
+        </div>
+        <div class="dialog__content">
+          <div class="dialog__inner">
+            <h3 class="dialog__title">Aktifkan suara untuk lebih menikmati keseruan Tebak Lirik Ed Sheeran</h3>
+            <div class="dialog__action">
+              <button class="btn btn--primary btn--animate">
+                Ya, aktifkan suara
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dialog dialog--custom dialog--sound" id="js_dialog-login">
+      <div class="dialog__container">
+        <div class="dialog__close" onclick="handleCloseDialog()"></div>
+        <div class="dialog__icon">
+          <div class="dialog__icon-img"></div>
+        </div>
+        <div class="dialog__content">
+          <div class="dialog__inner">
+            <h3 class="dialog__title">Segera Log In Untuk Main Tebak Lirik Ed Sheeran</h3>
+            <div class="dialog__action">
+              <button class="btn btn--primary btn--animate">
+                Log In
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

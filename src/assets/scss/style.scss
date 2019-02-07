@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'SPProText';
+  font-display: auto;
+  src: url(https://cdn.tokopedia.net/play-groupchat/assets/font/SF-Pro-Text-Regular.otf);
+}
+
+@font-face {
+  font-family: 'SPProTextDisplay';
+  font-display: auto;
+  src: url(../font/SF-Pro-Display-Regular.otf);
+}
+
+@font-face {
+  font-family: 'Permanent Marker';
+  font-display: auto;
+  src: url(../font/PermanentMarker-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'AvenirBook';
+  font-display: auto;
+  src: url(https://cdn.tokopedia.net/play-groupchat/assets/font/AvenirLTStd-Book.otf);
+}
+
+@import './global/color';
+@import './global/mixin';
+@import './global/core';
+@import './base';
+@import './bottom-sheet';
+@import './button';
+@import './dialog';
+@import './icon';
+@import './loader';
+@import './menu';
+@import './search';
+
+@import './blocker';
+@import './home';
+@import './quiz';
+@import './leaderboard';
+@import './complete';

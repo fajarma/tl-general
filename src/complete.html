@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tebak Lirik - Ed Sheeran</title>
+</head>
+
+<body class="ed-sheeran">
+    <div id="wrapper">
+        <div class="complete">
+            <div class="complete__top">
+                <div class="complete__menu menu">
+                    <span class="menu__action menu__action--back"></span>
+                    <div class="complete__menu-right">
+                        <span class="menu menu__action menu__action--leaderboard" onclick="renderLeaderboard('complete')"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="complete__container">
+                <div class="complete__content">
+                    <div class="complete__title">
+                        Skor Anda
+                    </div>
+                    <div class="complete__score-wrapper">
+                        <div class="complete__score-total">
+                            1.575
+                        </div>
+                        <button class="btn btn--text btn--text-white btn--share">
+                            <span>Pamerkan Skor</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="complete__action">
+                    <div class="complete__desc">
+                        Lihat konten berikut untuk dapatkan 2x skor
+                    </div>
+                    <div class="complete__btn-wrapper">
+                        <button class="btn btn-img btn-img--primary">
+                            <span>GANDAKAN SKOR</span>
+                        </button>
+                        <button class="btn btn-img btn-img--secondary btn--play">
+                            <span>Main Lagi</span>
+                        </button>
+                    </div>
+                    <button class="btn btn--small btn--token">
+                        <span>Token: 0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="overlay"></div>
+        <div class="dialog dialog--transparent">
+            <div class="dialog__container">
+                <div class="dialog__content">
+                    <div class="dialog__inner">
+                        <div class="coupon">
+                            <div class="coupon__list">
+                                <img src="https://cdn.tokopedia.net/play-groupchat/assets/img/coupon.png" alt="coupon">
+                            </div>
+                        </div>
+                        <div class="dialog__title">Selamat!</div>
+                        <div class="dialog__desc">
+                            Anda mendapatkan kupon cashback hingga Rp. 200.000 dari Tebak Lirik Ed Sheeran
+                        </div>
+                        <button class="btn btn-img btn-img--primary">
+                            <span>KLAIM KUPON</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

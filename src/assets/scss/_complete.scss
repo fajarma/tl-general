@@ -1,0 +1,107 @@
+.complete{
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/main-bg.jpg);
+    @include backgroundImg;
+    background-position: top;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        height: 45vh;
+        width: 100%;
+        background-image: linear-gradient($black0, $black4);
+    }
+    &__top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+    }
+    &__menu {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 24px 16px 0;
+        &-right {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            .menu {
+                &__action {
+                    margin-left: 16px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+    &__container {
+        height: 100vh;
+        padding: 56px 0 24px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+    }
+    &__content{
+        font-family: $markerFont;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    &__action {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+    }
+    &__btn-wrapper{
+        button{
+            &:nth-child(2){
+                margin-top: -8px;
+            }
+        }
+    }
+    &__desc{
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 4px;
+    }
+    &__score{
+        &-wrapper{
+            @include backgroundImg;
+            background-image: url('../img/total-score-bg.png');
+            background-size: 100% 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 24px 0 32px;
+            width: 100%;
+        }
+        &-total{
+            font-family: $markerFont;
+            font-size: 72px;
+            letter-spacing: 5px;
+            line-height: 85px;
+        }
+    }
+    &__title{
+        font-family: $markerFont;
+        font-size: 24px;
+        letter-spacing: 0.3px;
+        @include backgroundImg;
+        background-image: url('../img/title-score-bg.png');
+        background-size: contain;
+        margin-bottom: 8px;
+        width: 180px;
+        height: 60px;
+        padding-top: 16px;
+    }
+}

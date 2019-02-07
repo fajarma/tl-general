@@ -1,0 +1,64 @@
+.menu{
+  padding: 16px 16px 0;
+  @include breakpoint(sm){
+    padding: 32px 32px 0;
+  }
+  &__action{
+    padding: 0;
+    &::before{
+      content: '';
+      display: block;
+      width: 32px;
+      height: 32px;
+      @include backgroundImg;
+    }
+
+    &--back{
+      &::before{
+        background-image: url(https://cdn.tokopedia.net/play-groupchat/assets/img/general/back-icon.svg);
+      }
+    }
+    &--leaderboard{
+      &::before{
+        background-image: url(https://cdn.tokopedia.net/play-groupchat/assets/img/general/leaderboard-icon.svg);
+      }
+    }
+    &--share{
+      &::before{
+        background-image: url(https://cdn.tokopedia.net/play-groupchat/assets/img/general/share-icon.svg);
+      }
+    }
+    &--sound{
+      &-on{
+        &::before{
+          background-image: url(../img/sound.svg);
+        }
+      }
+      &-off{
+        &::before{
+          background-image: url(../img/sound-disabled.svg);
+        }
+      }
+    }
+  }
+  &__score{
+    border-radius: 14.5px;
+    background-color: $blackPrimary;
+    position: absolute;
+    right: 0;
+    display: flex;
+    align-items: center;
+    span{
+      display: block;
+      padding: 0 8px;
+      min-width: 29px;
+      height: 29px;
+      line-height: 29px;
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: $whitePrimary;
+      -webkit-text-fill-color: $whitePrimary;
+    }
+  } 
+}

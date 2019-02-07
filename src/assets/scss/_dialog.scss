@@ -1,0 +1,350 @@
+.overlay {
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(6, 6, 6, .8);
+    transition: all ease .3s;
+    &--show {
+        opacity: 1;
+        z-index: 10;
+    }
+}
+
+.dialog {
+    $dialog: &;
+    opacity: 0;
+    z-index: -1;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__container {
+        position: relative;
+        width: 256px; // width: calc(100vw - 32px);
+        transition: transform ease .3s;
+        /* @include breakpoint(sm){
+            width: 560px;
+        } */
+    }
+    &__content {
+        position: relative;
+        box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+        background-color: $whitePrimary;
+    }
+    &__inner {
+        padding: 60px 20px 32px;
+        text-align: center;
+    }
+    &__close {
+        position: absolute;
+        z-index: 3;
+        width: 24px;
+        height: 24px;
+        top: 8px;
+        right: 8px;
+        @include backgroundImg;
+        background-image: url(../img/close-circle-2.png);
+        background-size: contain;
+        filter: drop-shadow(0 2px 5px $black3);
+        -webkit-filter: drop-shadow(0 2px 5px $black3);
+        &::before, &::after{
+            content: '';
+            position: absolute;
+            @include backgroundImg;
+            background-size: 100%;
+            transition: all .15s ease;
+        }
+        &::before{
+            height: 21px;
+            width: 24px;
+            top: 0;
+            background-image: url(../img/close-circle-1.png);
+        }
+        &::after{
+            height: 14px;
+            width: 12px;
+            top: 4px;
+            left: 6px;
+            background-image: url(../img/close-icon.png);
+        }
+        &:active{
+            &::before{
+                top: 3px;
+            }
+            &::after{
+                top: 7px;
+                transform: scale(.9);
+            }
+        }
+    }
+    &__title {
+        font-size: 16px;
+        margin: 0 0 16px;
+        line-height: 1.38;
+        color: $black7;
+    }
+    &__desc {
+        font-size: 14px;
+        margin: 0;
+        max-width: 100%;
+        font-weight: normal;
+        text-shadow: none;
+        line-height: 1.43;
+        color: $black54;
+    }
+    &__info {
+        font-size: 10px;
+        margin: 24px 0 8px;
+        font-weight: normal;
+        line-height: 2;
+        color: $black54;
+    }
+    &__action {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &>*:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    }
+    .coupon {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        position: relative;
+        z-index: 3;
+        ;
+        &__list {
+            max-width: 50%;
+            img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+    }
+    &--show {
+        opacity: 1;
+        z-index: 10;
+        transition: opacity .1s ease-in;
+        #{$dialog} {
+            &__container {
+                transition: transform ease .35s;
+            }
+        }
+    }
+    &--home {
+        #{$dialog} {
+            &__inner {
+                position: relative;
+                text-align: center;
+            }
+            &__desc {
+                margin: 0 auto 16px;
+            }
+            &__icon {
+                &-img {
+                    background-image: url(../img/prize-dialog.svg);
+                    width: 96px;
+                    height: 96px;
+                }
+            }
+        }
+    }
+    &--token {
+        #{$dialog} {
+            &__desc {
+                margin: 0 auto 16px;
+            }
+            &__icon {
+                &-img {
+                    background-image: url(../img/extra-token.svg);
+                    width: 132px;
+                    height: 95px;
+                }
+            }
+            &__inner {
+                padding-bottom: 16px;
+            }
+        }
+    }
+    &--sound {
+        #{$dialog} {
+            &__icon {
+                top: -13px;
+                &-img {
+                    background-image: url(../img/login-disc.svg);
+                    width: 136px;
+                    height: 110px;
+                }
+            }
+            &__title {
+                margin-bottom: 24px;
+            }
+            &__inner {
+                padding-top: 55px;
+                padding-bottom: 24px;
+            }
+        }
+    }
+    &--back {
+        #{$dialog} {
+            &__inner {
+                padding-top: 45px;
+                padding-bottom: 24px;
+            }
+            &__desc {
+                color: $black54;
+                margin: 0 0 40px;
+                line-height: 1.43;
+            }
+            &__footer {
+                display: block;
+                text-align: right;
+                button {
+                    display: inline-block;
+                    margin: 0 16px;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+    &--reward {
+        #{$dialog} {
+            &__container {
+                position: relative;
+                &::before {
+                    content: '';
+                    pointer-events: none;
+                    position: absolute;
+                    width: 208px;
+                    height: 208px;
+                    top: -104px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    @include backgroundImg;
+                    background-image: url(https://cdn.tokopedia.net/play-groupchat/assets/img/general/shine.png);
+                    background-position-y: top;
+                    opacity: .4;
+                    animation: infiniteRotate 15s linear 0s infinite normal forwards;
+                    @include keyframes(infiniteRotate) {
+                        0% {
+                            transform: translateX(-50%) rotate(0) scale(1);
+                        }
+                        25% {
+                            transform: translateX(-50%) rotate(90deg) scale(1.2);
+                        }
+                        50% {
+                            transform: translateX(-50%) rotate(180deg) scale(1);
+                        }
+                        75% {
+                            transform: translateX(-50%) rotate(270deg) scale(1.2);
+                        }
+                        100% {
+                            transform: translateX(-50%) rotate(360deg) scale(1);
+                        }
+                    }
+                }
+            }
+            &__inner {
+                padding-top: 40px;
+            }
+            &__title {
+                font-size: 18px;
+                margin: 0 0 8px;
+            }
+            &__desc {
+                margin: 0;
+            }
+        }
+        .coupon {
+            margin: 8px auto 16px;
+            width: 256px;
+            &__list {
+                max-width: 90%;
+            }
+        }
+    }
+    &__icon {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 3;
+        &-img {
+            @include backgroundImg;
+            position: absolute;
+            transform: translateY(-50%);
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            z-index: 2;
+        }
+    }
+    &--transparent {
+        #{$dialog} {
+            &__container {
+                margin-top: 60px;
+                width: 100%;
+                color: $whitePrimary;
+            }
+            &__content {
+                background-color: transparent;
+                box-shadow: none;
+            }
+            &__inner {
+                padding: 0;
+                button {
+                    transform: scale(.75);
+                    margin: 0 auto;
+                }
+                .coupon__list {
+                    max-width: 215px;
+                    position: relative;
+                    margin-bottom: -2px;
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 290px;
+                        height: 215px;
+                        top: -57px;
+                        left: -40px;
+                        @include backgroundImg;
+                        background-image: url(../img/coupon-effect.svg);
+                    }
+                }
+            }
+            &__title {
+                color: $white2;
+                font-family: $markerFont;
+                font-size: 24px;
+                font-weight: normal;
+                margin-bottom: 12px;
+            }
+            &__desc {
+                line-height: 1.43;
+                color: $white2;
+                margin: 0 auto;
+                width: 65%;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
